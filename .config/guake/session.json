@@ -1,0 +1,25 @@
+{
+    "schema_version": 2,
+    "timestamp": 1597238576,
+    "workspace": {
+        "0": [
+            [
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/purhank",
+                            "custom_colors": {
+                                "fg_color": null,
+                                "bg_color": null,
+                                "palette": null
+                            }
+                        }
+                    ],
+                    "label": "purhank@purhan:~",
+                    "custom_label_set": false
+                }
+            ]
+        ]
+    }
+}

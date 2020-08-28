@@ -1,0 +1,21 @@
+[Desktop Entry]
+DefaultProfile=Profile 2.profile
+
+[DownloadDialog Settings]
+Height 768=444
+Width 1366=700
+
+[Favorite Profiles]
+Favorites=Breath2.profile
+
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABRYAAAK3AAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+CloseAllTabs=true
