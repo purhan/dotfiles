@@ -1,0 +1,101 @@
+configuration {
+    show-icons:                     true;
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
+}
+
+* {
+  al:           #00000000;
+  bg:           #000000cc;
+  se:           #FFFFFF0d;
+  fg:           #FFFFFFcc;
+  ac:           #FFFFFFcc;
+  pt:           #000000cc;
+}
+
+window {
+    transparency:                   "real";
+    background-color:               @bg;
+    text-color:                     @fg;
+	border:							0px;
+	border-color:					@ac;
+	width:							30%;
+    height:                         100%;
+    location:                       west;
+    x-offset:                       0;
+    y-offset:                       0;
+    font:                           "Ubuntu Bold 11";
+}
+
+entry {
+    background-color:               @al;
+    text-color:                     @fg;
+    placeholder-color:              @bg;
+    expand:                         true;
+    horizontal-align:               0;
+    blink:                          true;
+    font:                           "Ubuntu Bold 18";
+}
+
+inputbar {
+	children: 						[ entry ];
+    background-color:               @bg;
+    text-color:                     @fg;
+    expand:                         false;
+	border:							0% 0% 0% 0%;
+    border-radius:                  0px;
+	border-color:					@ac;
+    margin:                         0% 0% 0% 0%;
+    padding:                        1.5%;
+}
+
+listview {
+    padding:                        1%;
+    background-color:               @al;
+    columns:                        1;
+    lines:                          5;
+    spacing:                        0%;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @al;
+	border:							0% 0% 0% 0%;
+    border-radius:                  0% 0% 0% 0%;
+	border-color:					@ac;
+    children:                       [ inputbar, listview ];
+    spacing:                       	0%;
+    padding:                        0%;
+}
+
+element {
+    background-color:               @al;
+    text-color:                     @fg;
+    orientation:                    vertical;
+    border-radius:                  0%;
+    padding:                        2% 0% 2% 1%;
+}
+
+element-icon {
+    size:                           64px;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0.5% 0.5% 0.5% 0.5%;
+}
+
+element selected {
+    background-color:               @se;
+    text-color:                     @fg;
+    border-color:                   @fg;
+	border:							0 0 0 5px solid;
+    padding:                        15px;
+}
