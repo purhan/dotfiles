@@ -35,7 +35,7 @@ function updateBarsVisibility()
     for s in screen do
         if s.selected_tag then
             local fullscreen = s.selected_tag.fullscreenMode
-            -- Order matter here for shadow
+            -- Order matters here for shadow
             s.workspace_panel.visible = not fullscreen
             s.mode_panel.visible = not fullscreen
             s.tasklist_panel.visible = not fullscreen
