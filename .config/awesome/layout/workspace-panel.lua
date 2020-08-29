@@ -9,8 +9,8 @@ local dpi = require('beautiful').xresources.apply_dpi
 local WorkspacePanel = function(s, offset)
     local offsetx = 0
     if offset == true then
-        offsetx = dpi(50)
-        offsety = dpi(12)
+        offsetx = dpi(42)
+        offsety = dpi(4)
     end
     local panel = wibox({
         ontop = false,

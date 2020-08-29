@@ -18,8 +18,8 @@ local volume_percentage_widget = wibox.container.background(
                                      require('widget.volume.volume-percentage'))
 
 local VolumePanel = function(s, offset)
-    local offsetx = dpi(236)
-    if offset == true then offsety = dpi(12) end
+    local offsetx = dpi(228)
+    if offset == true then offsety = dpi(4) end
     local panel = wibox({
         ontop = false,
         screen = s,

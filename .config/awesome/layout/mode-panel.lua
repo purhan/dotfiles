@@ -25,15 +25,15 @@ end
 local ModePanel = function(s, offset)
     local offsetx = 0
     if offset == true then
-        offsetx = dpi(512)
-        offsety = dpi(12)
+        offsetx = -dpi(36)
+        offsety = dpi(4)
     end
     local panel = wibox({
         ontop = false,
         screen = s,
         height = dpi(32),
         width = dpi(32),
-        x = s.geometry.width - dpi(44),
+        x = s.geometry.width + offsetx,
         y = s.geometry.y + offsety,
         stretch = false,
         bg = beautiful.primary.hue_900,

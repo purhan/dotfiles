@@ -14,7 +14,7 @@ Run the following commands in the terminal. This also creates a backup for any p
 
 ```bash
 
-git clone https://github.com/purhan/dotfiles.git
+git clone --depth 1 https://github.com/purhan/dotfiles.git
 cp ~/.config/awesome ~/.config/awesome_backup
 mv -a dotfiles/RICE/werewolf/. ~/.config/awesome
 rm -rf dotfiles

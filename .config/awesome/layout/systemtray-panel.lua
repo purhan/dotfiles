@@ -19,15 +19,15 @@ systray:set_base_size(32)
 local TopPanel = function(s, offset)
     local offsetx = 0
     if offset == true then
-        offsetx = dpi(128)
-        offsety = dpi(12)
+        offsetx = -dpi(310)
+        offsety = dpi(4)
     end
     local panel = wibox({
         ontop = false,
         screen = s,
         height = dpi(32),
         width = dpi(128),
-        x = s.geometry.width - dpi(318),
+        x = s.geometry.width + offsetx,
         y = s.geometry.y + offsety,
         stretch = false,
         bg = beautiful.primary.hue_900,

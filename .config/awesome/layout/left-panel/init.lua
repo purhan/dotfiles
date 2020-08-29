@@ -7,13 +7,13 @@ local dpi = require('beautiful').xresources.apply_dpi
 local left_panel = function(screen)
     local action_bar_width = dpi(32)
     local panel_content_width = dpi(400)
-    local offsety = dpi(12)
+    local offsety = dpi(4)
 
     local panel = wibox {
         screen = screen,
         width = dpi(32),
         height = dpi(32),
-        x = screen.geometry.x + 12,
+        x = screen.geometry.x + 4,
         y = screen.geometry.y + offsety,
         ontop = false,
         bg = beautiful.primary.hue_900,
@@ -22,7 +22,7 @@ local left_panel = function(screen)
 
     panel.opened = false
 
-    panel:struts({left = dpi(0), top = dpi(48)})
+    panel:struts({left = dpi(0), top = dpi(32)})
 
     local backdrop = wibox {
         ontop = true,
