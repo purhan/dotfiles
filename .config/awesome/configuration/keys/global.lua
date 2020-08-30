@@ -42,9 +42,6 @@ awful.key({modkey}, 'd', function()
         if flag == true then c.minimized = false end
     end
 end, {description = 'minimize all clients', group = 'awesome'}),
-awful.key({altkey}, 'space',
-          function() _G.screen.primary.left_panel:toggle(true) end,
-          {description = 'show main menu', group = 'awesome'}),
 awful.key({modkey}, 'u', awful.client.urgent.jumpto,
           {description = 'jump to urgent client', group = 'client'}),
 awful.key({altkey}, 'Tab', function()

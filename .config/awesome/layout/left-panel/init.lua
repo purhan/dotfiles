@@ -22,7 +22,7 @@ local left_panel = function(screen)
 
     panel.opened = false
 
-    panel:struts({left = dpi(0), top = dpi(32)})
+    panel:struts({left = dpi(0), top = dpi(36)})
 
     local backdrop = wibox {
         ontop = true,
