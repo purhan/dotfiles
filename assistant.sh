@@ -37,7 +37,7 @@ do
             -a)
                 echo "Adding the whole config ..."
                 cd ~/
-                config add README.md .gitignore assistant.sh .bashrc .vimrc .astylerc conf-scripts .gtkrc-2.0 RICE vampire.sh
+                config add README.md  assistant.sh .bashrc .vimrc .astylerc conf-scripts .gtkrc-2.0 RICE vampire.sh
 
                 cd .config
                 config add awesome sublime-text-3/Packages/User gtk-2.0 gtk-3.0 guake powerline-shell konsolerc spectaclerc termite
