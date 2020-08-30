@@ -159,14 +159,14 @@ alias assistant='$HOME/assistant.sh'
 # BASH PROMPT (USELESS, JUST USE ZSH/POWERLINE)
 function parse_git_dirty {
   STATUS="$(git status 2> /dev/null)"
-  if [[ $? -ne 0 ]]; then printf "-"; return; else printf "("; fi
+  if [[ $? -ne 0 ]]; then printf "-"; return; else printf "["; fi
   if echo ${STATUS} | grep -c "renamed:"         &> /dev/null; then printf ">"; else printf ""; fi
-  if echo ${STATUS} | grep -c "branch is ahead"  &> /dev/null; then printf "!"; else printf ""; fi
+  if echo ${STATUS} | grep -c "branch is ahead"  &> /dev/null; then printf "\e[31m!\033[34m"; else printf ""; fi
   if echo ${STATUS} | grep -c "new file:"        &> /dev/null; then printf "+"; else printf ""; fi
   if echo ${STATUS} | grep -c "Untracked files:" &> /dev/null; then printf "?"; else printf ""; fi
   if echo ${STATUS} | grep -c "modified:"        &> /dev/null; then printf "*"; else printf ""; fi
   if echo ${STATUS} | grep -c "deleted:"         &> /dev/null; then printf "-"; else printf ""; fi
-  printf ")"
+  printf "]"
 }
 parse_git_branch() {
   # Long form
@@ -174,8 +174,7 @@ parse_git_branch() {
   # Short form
   # git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/.*\/\(.*\)/\1/'
 }
-PS1="\n┌─[\`if [ \$? = 0 ]; then echo \[\e[32m\]OK\[\e[0m\]; else echo \[\e[31m\]X\[\e[0m\]; fi\`]───[\[\e[01;49;39m\]\u\[\e[00m\]\[\e[01;49;39m\]\[\e[00m\]]─[\[\e[1;49;34m\]\W\[\e[0m\]]───[\[\e[1;49;39m\]\$(ls | wc -l) files, \$(ls -lah | grep -m 1 total | sed 's/total //')\[\e[0m\]]─"
-PS1+="[\033[33m\]\$(parse_git_branch)\[\033[31m\]\$(parse_git_dirty)\[\033[00m\]]"
-PS1+="\n└───\[\e[31m\]▶\[\e[33m\]▶\[\e[32m\]▶\[\e[0m\] "
+PS1="\[\e[1;49;34m\]@\u\[\e[00m\]\[\e[01;49;39m\]\[\e[00m\] \[\e[1;49;31m\]\W\[\e[0m\]"
+PS1+=" (git: \e[1;50;32m\]\$(parse_git_branch)\[\033[34m\]\$(parse_git_dirty)\[\033[00m\])"
+PS1+="\n\`if [ \$? = 0 ]; then echo \[\e[32m\]; else echo \[\e[31m\]; fi\` ➜\[\e[0m\]  "
 export PS1
-# \`if [ git ]; then echo ───[$(git branch 2>/dev/null | grep '^*' | colrm 1 2)]; fi\`
