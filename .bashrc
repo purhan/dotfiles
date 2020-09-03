@@ -175,6 +175,6 @@ parse_git_branch() {
   # git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/.*\/\(.*\)/\1/'
 }
 PS1="\[\e[1;49;34m\]@\u\[\e[00m\]\[\e[01;49;39m\]\[\e[00m\] \[\e[1;49;31m\]\W\[\e[0m\]"
-PS1+=" (git: \e[1;50;32m\]\$(parse_git_branch)\[\033[34m\]\$(parse_git_dirty)\[\033[00m\])"
-PS1+="\n\`if [ \$? = 0 ]; then echo \[\e[32m\]; else echo \[\e[31m\]; fi\` ➜\[\e[0m\]  "
+PS1+=" (git: \e[1;50;35m\]\$(parse_git_branch)\[\033[34m\]\$(parse_git_dirty)\[\033[00m\])"
+PS1+="\n \[\033[32m\]➜\[\e[0m\]  "
 export PS1

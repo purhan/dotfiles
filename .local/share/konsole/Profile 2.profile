@@ -9,7 +9,7 @@ UseFontLineChararacters=false
 CursorShape=1
 
 [General]
-Command=/usr/bin/zsh
+Command=/bin/bash
 LocalTabTitleFormat=
 Name=Profile 2
 Parent=FALLBACK/

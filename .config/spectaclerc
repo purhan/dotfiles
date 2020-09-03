@@ -3,9 +3,8 @@ update_info=spectacle_newConfig.upd:spectacle-new-config
 
 [GuiConfig]
 captureDelay=5
-onClickChecked=true
-window-position=195,198
+window-position=195,191
 
 [Save]
-lastSaveAsLocation=file:///home/purhan/Pictures/Screenshot_20200828_110348.png
-lastSaveLocation=file:///home/purhan/Pictures/Screenshot_20200828_123321.png
+lastSaveAsLocation=file:///home/purhan/Pictures/Screenshot_20200902_180730.png
+lastSaveLocation=file:///home/purhan/Pictures/Screenshot_20200902_192003.png

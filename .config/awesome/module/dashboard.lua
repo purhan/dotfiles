@@ -316,6 +316,8 @@ local fortune_update_interval = 3600
 local fortune = wibox.widget {
     font = "Roboto 11",
     text = "You so poor you don't even have a cookie yet...",
+    align = 'center',
+    valign = 'center',
     widget = wibox.widget.textbox
 }
 

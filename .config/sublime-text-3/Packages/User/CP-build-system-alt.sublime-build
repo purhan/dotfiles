@@ -1,0 +1,24 @@
+{
+  "target": "terminus_open",
+  "cancel": "terminus_cancel_build",
+  "title": "Terminal",
+  "auto_close": false,
+  "timeit": true,
+
+  "post_window_hooks": [["carry_file_to_pane", { "direction": "down" }]],
+
+  "focus": false,
+  "cmd": [
+    "bash",
+    "-c",
+    "g++ -std=c++17 -Wall -Wextra -Wshadow -fsanitize=undefined '${file}' -o '${file_path}/compiled'.o && tput setaf 2 && TIMEFORMAT='\nExecution Time: %R' && time timeout 5s '${file_path}/compiled.o' < input.txt && unset TIMEFORMAT"
+  ],
+  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+  "working_dir": "${file_path}",
+  "selector": "source.c, source.c++",
+  "variants": [
+    {
+      "name": "Run"
+    }
+  ]
+}

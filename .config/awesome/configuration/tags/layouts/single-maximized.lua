@@ -5,7 +5,6 @@
 -- @copyright 2008 Julien Danjou
 -- @module awful.layout
 ---------------------------------------------------------------------------
-
 -- Grab environment we need
 local pairs = pairs
 
@@ -44,9 +43,7 @@ end
 --- Maximized layout.
 -- @clientlayout awful.layout.suit.max.name
 max.name = 'max'
-function max.arrange(p)
-    return fmax(p, false)
-end
+function max.arrange(p) return fmax(p, false) end
 function max.skip_gap(nclients, t) -- luacheck: no unused args
     return true
 end

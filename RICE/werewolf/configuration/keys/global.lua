@@ -160,15 +160,18 @@ awful.key({}, 'XF86MonBrightnessUp',
 awful.key({}, 'XF86MonBrightnessDown',
           function() awful.spawn('xbacklight -dec 10') end,
           {description = '-10%', group = 'hotkeys'}), -- ALSA volume control
-awful.key({}, 'XF86AudioRaiseVolume',
-          function() awful.spawn('amixer -D pulse sset Master 5%+') end,
-          {description = 'volume up', group = 'hotkeys'}),
-awful.key({}, 'XF86AudioLowerVolume',
-          function() awful.spawn('amixer -D pulse sset Master 5%-') end,
-          {description = 'volume down', group = 'hotkeys'}),
-awful.key({}, 'XF86AudioMute',
-          function() awful.spawn('amixer -D pulse set Master 1+ toggle') end,
-          {description = 'toggle mute', group = 'hotkeys'}),
+awful.key({}, 'XF86AudioRaiseVolume', function()
+    awful.spawn('amixer -D pulse sset Master 5%+')
+    _G.update_volume()
+end, {description = 'volume up', group = 'hotkeys'}),
+awful.key({}, 'XF86AudioLowerVolume', function()
+    awful.spawn('amixer -D pulse sset Master 5%-')
+    _G.update_volume()
+end, {description = 'volume down', group = 'hotkeys'}),
+awful.key({}, 'XF86AudioMute', function()
+    awful.spawn('amixer -D pulse set Master 1+ toggle')
+    _G.update_volume()
+end, {description = 'toggle mute', group = 'hotkeys'}),
 awful.key({}, 'XF86AudioNext', function()
     --
 end, {description = 'toggle mute', group = 'hotkeys'}),
