@@ -178,3 +178,6 @@ PS1="\[\e[1;49;34m\]@\u\[\e[00m\]\[\e[01;49;39m\]\[\e[00m\] \[\e[1;49;31m\]\W\[\
 PS1+=" (git: \e[1;50;35m\]\$(parse_git_branch)\[\033[34m\]\$(parse_git_dirty)\[\033[00m\])"
 PS1+="\n \[\033[32m\]➜\[\e[0m\]  "
 export PS1
+
+
+alias pip=pip3
