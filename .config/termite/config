@@ -6,7 +6,7 @@
 #cell_width_scale = 1.0
 #clickable_url = true
 dynamic_title = false
-font = Source Code Pro 10
+font = Source Code Pro for Powerline 11
 #fullscreen = true
 icon_name = Termite
 #mouse_autohide = false

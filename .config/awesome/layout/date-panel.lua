@@ -9,7 +9,7 @@ local dpi = require('beautiful').xresources.apply_dpi
 local icons = require('theme.icons')
 
 local textclock = wibox.widget.textclock(
-                      '<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
+                      '<span font="Roboto bold 9">%d.%m.%Y\n     %H:%M</span>')
 
 local date_widget = wibox.container.margin(textclock, dpi(8), dpi(8), dpi(8),
                                            dpi(8))

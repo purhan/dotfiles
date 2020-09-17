@@ -5,7 +5,7 @@ include "/home/purhan/.gtkrc-2.0.mine"
 gtk-theme-name="gtk-master"
 gtk-icon-theme-name="ePapirus"
 gtk-font-name="Noto Sans,  10"
-gtk-cursor-theme-name="xcursor-breeze"
+gtk-cursor-theme-name="Sweet-cursors"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
