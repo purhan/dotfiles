@@ -10,17 +10,7 @@ set softtabstop=4
 set expandtab
 set updatetime=250
 set title
-autocmd GUIEnter * set vb t_vb=
 set belloff=all
-function! ToggleGUICruft()
-    if &guioptions==''
-        exec('set guioptions=mT')
-    else
-        exec('set guioptions=')
-    endif
-endfunction
-noremap <C-m> <Esc>:call ToggleGUICruft()<cr>
-
 
 "KEYBINDINGS
 nmap <S-Up> v<Up>
@@ -39,6 +29,8 @@ vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
 map <C-v> pi
 map <S-End> v$
+nmap <S-j> 10j
+nmap <S-k> 10k
 imap <C-v> <Esc>pi
 map <C-z> <Esc>u
 map <C-y> <Esc><C-r>i
@@ -50,7 +42,6 @@ map <silent><C-w> <C-C>:bd<CR>
 map <silent><C-q> <C-C>:q!<CR>
 map <silent><C-O> <Esc>:tabnew#<CR>
 map <silent><C-R> <Esc>:source ~/.vimrc<CR>
-noremap i a
 
 
 " VUNDLE PLUGINS
@@ -101,32 +92,19 @@ let g:NERDTreeWinPos = "right"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-nnoremap <C-H> :bprevious<CR>
-nnoremap <C-L>   :bnext<CR>
 nmap <C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 
 " THEMING
-" set guioptions=
-" let g:dracula_colorterm = 0
 set termguicolors
 colorscheme dracula
 set background=dark
 hi Normal guibg=NONE ctermbg=NONE
-" set guifont=Source\ Code\ Pro\ 10
-
-" SYSTEM SPECIFIC SETTINGS
-cd ~/Desktop/Coding\ Library/Ongoing
-function! Templatecpp()
-    :1,$d
-    :read ~/Desktop/Coding\ Library/IDE/template.cpp
-    :1d
-endfunction
-command Template :call Templatecpp()
 
 
-" COMPILE RUN
-map <C-b> <Esc>:w<CR>:!g++ -o compiled.o % -std=c++17 && ./compiled.o<Enter>
-auto BufWritePost *.cpp execute 'silent :!astyle > /dev/null 2>&1'shellescape(expand('%'),1)
+" CHANGE CURSOR SHAPE BASED ON MODE
+" (Only works on VTE-based terminal)
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"

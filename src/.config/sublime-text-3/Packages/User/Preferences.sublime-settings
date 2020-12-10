@@ -1,0 +1,18 @@
+{
+	"color_scheme": "Packages/Color Scheme - Eazy Light/Eazy Light.tmTheme",
+	"file_exclude_patterns":
+	[
+		"*.o"
+	],
+	"font_face": "Consolas Regular",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": "true"
+}

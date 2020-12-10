@@ -1,0 +1,66 @@
+<snippet>
+	<content><![CDATA[
+/* INCLUDE STATEMENTS */
+#include <bits/stdc++.h>
+
+/* NAMESPACES */
+using namespace std; //  (┛ಠ_ಠ)┛  "Bad" Practice
+
+/* ALIASES */
+typedef long long lli;
+typedef long double ld;
+typedef unsigned uns;
+
+typedef pair<int, int> pi;
+typedef pair<lli, lli> pl;
+typedef pair<ld, ld> pd;
+
+typedef vector<int> vi;
+typedef vector<ld> vd;
+typedef vector<lli> vl;
+typedef vector<pi> vpi;
+typedef vector<pl> vpl;
+
+/* DEFINITIONS */
+#define mp make_pair
+#define pb push_back
+#define F  first
+#define S  second
+#define lb lower_bound
+#define ub upper_bound
+
+#define fo(i, a, b) for(auto i=a; i<(b); i++)
+#define forev(i, b, a) for(auto i = (b)-1; i >= a; i--)
+#define all(x) x.begin(), x.end()
+#define sortall(x) sort(all(x))
+#define sz(x) (int)x.size()
+#define enl "\n"
+#define deb(x) cout << #x << ": " << x << enl;
+
+/* CONSTANTS */
+// const ld PI = 4 * atan((ld)1);
+// const int MOD = 1000000007;
+// const lli INF = 1e18;
+// const int MX = INT_MAX - 1;
+
+/* UTILITIES */
+template<typename T> bool _odd(T a) {return a & 1;}
+template<typename T> bool _even(T a) {return !(a & 1);}
+
+/*=======================  ROBERT'S GOT A QUICK HAND  =======================*/
+
+void solve() {
+
+}
+
+int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
+	// int testcase; cin >> testcase; for (int i = 1; i <= testcase; ++i)
+	solve();
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>template</tabTrigger>
+</snippet>
+

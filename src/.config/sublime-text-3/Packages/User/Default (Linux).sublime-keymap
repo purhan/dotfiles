@@ -1,0 +1,21 @@
+[
+		{ "keys": ["ctrl+e"], "command": "toggle_side_bar" },
+		{
+ 			"keys": ["ctrl+b"], 
+			"command": "chain", 
+  			"args": {
+    			"commands": [
+    				["focus_group",{"group":0}],
+      				["terminus_close_all"],
+    				["build"],
+    				["focus_group",{"group":0}],
+          ]
+        }
+    },
+    { "keys": ["ctrl+t"],
+      "command": "terminus_open",
+      "args"   : {
+            "cwd": "${file_path:${folder}}"
+      }
+    },
+]
