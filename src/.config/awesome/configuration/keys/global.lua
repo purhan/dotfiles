@@ -17,19 +17,22 @@ awful.key({modkey}, 'h', hotkeys_popup.show_help, {
     description = 'show help',
     group = 'awesome'
 }), -- Tag browsing
-awful.key({modkey}, 'w', awful.tag.viewprev, {
-    description = 'view previous',
+awful.key({modkey}, 'Left', function()
+    awful.tag.viewprev()
+    _G._splash_to_current_tag()
+end, {
+    description = 'go to previous workspace',
     group = 'tag'
-}), awful.key({modkey}, 's', awful.tag.viewnext, {
-    description = 'view next',
+}), awful.key({modkey}, 'Right', function()
+    awful.tag.viewnext()
+    _G._splash_to_current_tag()
+end, {
+    description = 'go to next workspace',
     group = 'tag'
-}), awful.key({altkey, 'Control'}, 'Left', awful.tag.viewprev, {
-    description = 'view previous',
-    group = 'tag'
-}), awful.key({altkey, 'Control'}, 'Right', awful.tag.viewnext, {
-    description = 'view next',
-    group = 'tag'
-}), awful.key({modkey}, 'Escape', awful.tag.history.restore, {
+}), awful.key({modkey}, 'Escape', function()
+    awful.tag.history.restore()
+    _G._splash_to_current_tag()
+end, {
     description = 'go back',
     group = 'tag'
 }), -- Default client focus
@@ -48,27 +51,13 @@ end, {
 end, {
     description = 'show rofi menu',
     group = 'awesome'
-}), awful.key({modkey}, 'd', function()
-    local flag = false
-    for _, c in ipairs(mouse.screen.selected_tag:clients()) do
-        if c.minimized == true then
-            flag = true
-        end
-        c.minimized = true
-    end
-    for _, c in ipairs(mouse.screen.selected_tag:clients()) do
-        if flag == true then
-            c.minimized = false
-        end
-    end
+}), awful.key({modkey}, 'u', function()
+    awful.client.urgent.jumpto()
+    _G._splash_to_current_tag()
 end, {
-    description = 'minimize all clients',
-    group = 'awesome'
-}), awful.key({modkey}, 'u', awful.client.urgent.jumpto, {
     description = 'jump to urgent client',
     group = 'client'
 }), awful.key({altkey}, 'Tab', function()
-    -- awful.client.focus.history.previous()
     awful.client.focus.byidx(1)
     if _G.client.focus then
         _G.client.focus:raise()
@@ -76,8 +65,19 @@ end, {
 end, {
     description = 'switch to next window',
     group = 'client'
+}), awful.key({modkey}, 'm', function()
+    focus = not _G.client.focus
+    if not focus then
+        _G.client.focus.minimized = true
+    else
+        for _, c in ipairs(mouse.screen.selected_tag:clients()) do
+            c.minimized = false
+        end
+    end
+end, {
+    description = 'minimize window in focus / unminimize all',
+    group = 'client'
 }), awful.key({altkey, 'Shift'}, 'Tab', function()
-    -- awful.client.focus.history.previous()
     awful.client.focus.byidx(-1)
     if _G.client.focus then
         _G.client.focus:raise()
@@ -115,7 +115,7 @@ end, {
 end, {
     description = 'open a browser',
     group = 'launcher'
-}), awful.key({modkey}, 't', function()
+}), awful.key({modkey}, 'Return', function()
     awful.util.spawn_with_shell(apps.default.terminal)
 end, {
     description = 'open a terminal',
@@ -139,7 +139,7 @@ end, {
 end, {
     description = 'toggle gaps',
     group = 'awesome'
-}), awful.key({modkey, 'Shift'}, 'p', function()
+}), awful.key({modkey}, 'p', function()
     awful.util.spawn_with_shell(apps.default.power_command)
 end, {
     description = 'end session menu',
@@ -244,10 +244,15 @@ end, {
 end, {
     description = 'restore minimized',
     group = 'client'
-}), awful.key({altkey, 'Control'}, 'k', function()
-    _G.toggle_quake()
+}), awful.key({modkey}, 'k', function()
+    _G.toggle_splash()
 end, {
-    description = 'dropdown application',
+    description = 'toggle splash terminal',
+    group = 'launcher'
+}), awful.key({modkey}, 'j', function()
+    _G.toggle_splash_height()
+end, {
+    description = 'toggle splash terminal height',
     group = 'launcher'
 }), awful.key({}, 'XF86MonBrightnessUp', function()
     awful.spawn('xbacklight -inc 10')
@@ -345,6 +350,7 @@ for i = 1, 9 do
         local tag = screen.tags[i]
         if tag then
             tag:view_only()
+            _G._splash_to_current_tag()
         end
     end, descr_view), -- Toggle tag display.
     awful.key({modkey, 'Control'}, '#' .. i + 9, function()

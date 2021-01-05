@@ -118,7 +118,7 @@ element selected.normal {
 	background-color: 	@selected-normal-background;
 	text-color:       	@selected-normal-foreground;
 	padding: 			16px;
-	border:           	0 0 0 5px solid;
+	border:           	0 0 0 0 solid;
 	border-color:	    @active-background;
 }
 

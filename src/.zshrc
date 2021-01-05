@@ -78,7 +78,7 @@ ex ()
       *.7z)        7z x $1      ;;
       *.deb)       ar x $1      ;;
       *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;      
+      *.tar.zst)   unzstd $1    ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
   else
@@ -87,7 +87,7 @@ ex ()
 }
 
 
-### ALIASES ### 
+### ALIASES ###
 # =========== #
 # switch between shells
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
@@ -95,7 +95,7 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 # navigation
-alias ..='cd ..' 
+alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
@@ -112,15 +112,19 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias np='nano -w PKGBUILD'
 alias more=less
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+
+# Colorize ls output
+alias ls='ls --color=auto'
+alias ll='ls -alF --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
-alias vifm='./.config/vifm/scripts/vifmrun'
+
+# programs
+alias nv=nvim
 
 ## get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4'
@@ -150,12 +154,12 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
 # (MUST be at the end of file)
 # Install using makefile at ~/.config/zsh... Ditch package managers
 plugins () {
-  source ~/.config/zsh/keybindings.zsh    
+  source ~/.config/zsh/keybindings.zsh
   source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
   source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
   source ~/.config/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh # Better tab-completion
 }
 plugins || make -i -C ~/.config/zsh
 
-export NVM_DIR="/home/purhan/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Run at startup
+# This file is sourced by Xresources (GDM, LightDM, all source this)
+# ------------------------------------------------------------------
+
+# Make the keyboard movements faster
+xset r rate 340 50
+
+# Touchpad necessities
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+

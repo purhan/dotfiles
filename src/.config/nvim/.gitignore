@@ -1,0 +1,8 @@
+.netrwhist
+spell/
+plugged/
+*.swp
+temp/
+autoload/
+session/
+

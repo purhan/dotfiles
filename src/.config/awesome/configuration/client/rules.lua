@@ -24,13 +24,6 @@ awful.rules.rules = {{
     }
 }, {
     rule_any = {
-        instance = {"QuakeTerminal"}
-    },
-    properties = {
-        skip_decoration = true
-    }
-}, {
-    rule_any = {
         type = {'dialog'},
         class = {'Wicd-client.py', 'calendar.google.com'}
     },

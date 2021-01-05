@@ -15,15 +15,14 @@ apt = 	firefox \
 		gnome-tweaks \
 		htop \
 		vim \
+		neovim \
 		awesome \
 		python3-pip \
 		python3-venv \
-		fonts-powerline \
 		npm \
 		nodejs \
 		kitty \
 		zsh \
-		fish \
 		stow \
 		arandr
 
@@ -52,7 +51,7 @@ essentials:
 	# ================================= #
 	sudo apt install \
 	git \
-	curl \
+	curl
 
 others:
 	### SETTING UP SHELLS ###

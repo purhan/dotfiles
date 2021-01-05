@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ $1 == "" ]] 
+then
+    curl "http://wttr.in?0Q"
+    exit 0
+fi
+
+for i in "$@"
+do
+case $i in
+    --all)
+        curl "http://wttr.in"
+    ;; 
+    -a)
+        curl "http://wttr.in"
+    ;;
+    *)
+        curl "http://wttr.in/$i"
+    ;;
+esac
+done
+
