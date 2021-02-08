@@ -18,7 +18,3 @@ augroup END
 set nocompatible
 filetype off
 
-" PLUGIN PREFERENCES
-nmap <C-e> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
