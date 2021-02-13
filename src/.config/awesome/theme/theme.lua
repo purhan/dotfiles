@@ -6,8 +6,8 @@ local dpi = require('beautiful').xresources.apply_dpi
 local theme = {}
 
 -- Color Scheme
-theme.primary = color_schemes.gruvbox.primary
-theme.accent = color_schemes.gruvbox.accent
+theme.primary = color_schemes.gruvbox_material.primary
+theme.accent = color_schemes.gruvbox_material.accent
 
 local awesome_overrides = function(theme)
     theme.dir = os.getenv('HOME') .. '/.config/awesome/theme'
@@ -24,11 +24,7 @@ local awesome_overrides = function(theme)
     -- Taglist
     theme.taglist_font = theme.font
     theme.taglist_bg_empty = theme.primary.hue_100
-    theme.taglist_bg_occupied = 'linear:0,0:0,' .. dpi(32) .. ':0,' ..
-                                    theme.primary.hue_200 .. ':0.1,' ..
-                                    theme.primary.hue_200 .. ':0.1,' ..
-                                    theme.primary.hue_100 .. ':0.9,' ..
-                                    theme.primary.hue_100
+    theme.taglist_bg_occupied = theme.primary.hue_200
     theme.taglist_bg_urgent = 'linear:0,0:0,' .. dpi(48) .. ':0,' ..
                                   theme.accent.hue_700 .. ':0.07,' ..
                                   theme.accent.hue_700 .. ':0.07,' ..

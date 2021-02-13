@@ -24,7 +24,8 @@ apt = 	firefox \
 		kitty \
 		zsh \
 		stow \
-		arandr
+		arandr \
+		gh
 
 # Packages to be installed as snaps
 snap = discord

@@ -68,6 +68,7 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material' " I switch when I feel like it :P
+Plug 'dracula/vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'yuttie/comfortable-motion.vim'

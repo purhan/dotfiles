@@ -1,0 +1,27 @@
+[user]
+	email = purhan01@gmail.com
+	name = purhan
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+	oldNormal = red bold
+[color "diff"]
+	meta = 11 bold
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[diff-so-fancy]
+	changeHunkIndicators = false
+	stripLeadingSymbols = false
+	markEmptyLines = false
+	rulerWidth =
+    useUnicodeRuler = false
+; install gh-cli and login with `gh auth login`
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+

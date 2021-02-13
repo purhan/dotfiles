@@ -92,9 +92,9 @@ local TopBar = function(s, offset)
             -- Internet Speed
             wibox.widget{
                 create_icon('', beautiful.accent.hue_200),
-                net_sent.widget,
-                create_icon('', beautiful.accent.hue_300),
                 net_recieved.widget,
+                create_icon('', beautiful.accent.hue_300),
+                net_sent.widget,
                 spacing = dpi(4),
                 layout = wibox.layout.fixed.horizontal
             },

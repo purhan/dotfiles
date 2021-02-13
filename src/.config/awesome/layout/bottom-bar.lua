@@ -16,7 +16,7 @@ local BottomBar = function(s, offset)
         x = s.geometry.x,
         y = s.geometry.height - panel_height,
         stretch = false,
-        bg = beautiful.primary.hue_100,
+        bg = "00000000",
         fg = beautiful.fg_normal,
     })
 

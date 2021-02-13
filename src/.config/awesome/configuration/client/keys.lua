@@ -14,6 +14,13 @@ end, {
 end, {
     description = 'close',
     group = 'client'
+}) , awful.key({modkey, 'Shift'}, 'f', function(c)
+    c.sticky = not c.sticky
+    c.ontop = not c.ontop
+    c:raise()
+end, {
+    description = 'convert to sticky window',
+    group = 'client'
 }), awful.key({modkey, 'Shift'}, 'c', function(c)
     c:kill()
 end, {

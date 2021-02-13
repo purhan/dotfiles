@@ -19,6 +19,7 @@ fi
 # include personal scripts/bin
 if [ -d "$HOME/scripts/bin" ] ; then
     PATH="$HOME/scripts/bin:$PATH"
+    PATH="$HOME/scripts/monitor_setups:$PATH"
 fi
 
 source "$HOME/.cargo/env"

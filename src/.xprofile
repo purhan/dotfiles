@@ -11,3 +11,9 @@ xset r rate 340 50
 xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 
+# Turn off laptop screen when monitor connected
+hdmi_connected=$(xrandr | grep ' connected' | grep 'HDMI' | wc -l)
+if [ "$hdmi_connected" -eq 1 ]; then
+    eval "~/scripts/monitor_setups/monitor_only"
+fi
+

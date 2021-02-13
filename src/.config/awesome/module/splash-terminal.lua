@@ -58,7 +58,6 @@ _G.client.connect_signal('manage', function(c)
         c.height = (c.screen.geometry.height / 5) * 3
         c.y = c.screen.geometry.height - c.height - beautiful.border_width - dpi(16)
         c.floating = true
-        c.skip_taskbar = true
         c.skip_decoration = true
         c.ontop = true
         c.floating = true
