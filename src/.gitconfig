@@ -25,3 +25,7 @@
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 
+; global hooks
+[core]
+	hooksPath = /home/purhan/scripts/hooks/git/
+
