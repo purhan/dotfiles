@@ -1,12 +1,9 @@
 require('awful.autofocus')
 local awful = require('awful')
-local beautiful = require('beautiful')
 local hotkeys_popup = require('awful.hotkeys_popup').widget
 local modkey = require('configuration.keys.mod').modKey
 local altkey = require('configuration.keys.mod').altKey
 local apps = require('configuration.apps')
-local dpi = require('beautiful').xresources.apply_dpi
-local theme = require('theme')
 
 -- Key bindings
 local globalKeys = awful.util.table.join( -- Hotkeys
@@ -65,18 +62,6 @@ end, {
 end, {
     description = 'switch to next window',
     group = 'client'
-}), awful.key({modkey}, 'm', function()
-    focus = not _G.client.focus
-    if not focus then
-        _G.client.focus.minimized = true
-    else
-        for _, c in ipairs(mouse.screen.selected_tag:clients()) do
-            c.minimized = false
-        end
-    end
-end, {
-    description = 'minimize window in focus / unminimize all',
-    group = 'client'
 }), awful.key({altkey, 'Shift'}, 'Tab', function()
     awful.client.focus.byidx(-1)
     if _G.client.focus then
@@ -105,16 +90,6 @@ end, {
 end, {
     description = 'mark an area and screenshot it to your clipboard',
     group = 'screenshots (clipboard)'
-}), awful.key({modkey}, 'c', function()
-    awful.util.spawn(apps.default.editor)
-end, {
-    description = 'open a text/code editor',
-    group = 'launcher'
-}), awful.key({modkey}, 'b', function()
-    awful.util.spawn(apps.default.browser)
-end, {
-    description = 'open a browser',
-    group = 'launcher'
 }), awful.key({modkey}, 'Return', function()
     awful.util.spawn_with_shell(apps.default.terminal)
 end, {
@@ -125,19 +100,6 @@ end, {
     group = 'awesome'
 }), awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {
     description = 'quit awesome',
-    group = 'awesome'
-}), awful.key({modkey, 'Shift'}, 'g', function(t)
-    t = t or awful.screen.focused().selected_tag
-    local current_gap = t.gap
-    local new_gap
-    if current_gap == 0 then
-        new_gap = beautiful.gaps
-    else
-        new_gap = 0
-    end
-    t.gap = new_gap
-end, {
-    description = 'toggle gaps',
     group = 'awesome'
 }), awful.key({modkey}, 'p', function()
     awful.util.spawn_with_shell(apps.default.power_command)
@@ -234,25 +196,10 @@ end, {
 end, {
     description = 'decrease the number of columns',
     group = 'layout'
-}), awful.key({modkey, 'Control'}, 'n', function()
-    local c = awful.client.restore()
-    -- Focus restored client
-    if c then
-        _G.client.focus = c
-        c:raise()
-    end
-end, {
-    description = 'restore minimized',
-    group = 'client'
 }), awful.key({modkey}, 'k', function()
     _G.toggle_splash()
 end, {
     description = 'toggle splash terminal',
-    group = 'launcher'
-}), awful.key({modkey}, 'j', function()
-    _G.toggle_splash_height()
-end, {
-    description = 'toggle splash terminal height',
     group = 'launcher'
 }), awful.key({}, 'XF86MonBrightnessUp', function()
     awful.spawn('xbacklight -inc 10')
@@ -308,17 +255,7 @@ end, {
 }), awful.key({modkey}, 'o', awful.client.movetoscreen, {
     description = 'move window to next screen',
     group = 'client'
-}), awful.key({modkey}, 'n', function()
-    awful.spawn(awful.screen.focused().selected_tag.defaultApp, {
-        tag = _G.mouse.screen.selected_tag,
-        placement = awful.placement.bottom_right
-    })
-end, {
-    description = 'open default program for tag/workspace',
-    group = 'tag'
-}), awful.key({'Control', altkey}, 'space', function()
-    awful.util.spawn_with_shell('vm-attach attach')
-end))
+}))
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.

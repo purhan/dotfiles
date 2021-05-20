@@ -2,6 +2,7 @@ require('awful.autofocus')
 local gears = require('gears')
 local awful = require('awful')
 local naughty = require('naughty')
+local dpi = require('beautiful').xresources.apply_dpi
 local beautiful = require('beautiful')
 
 -- Theme
@@ -36,27 +37,36 @@ _G.client.connect_signal('manage', function(c)
 end)
 
 -- Move cursor to focused window
-function move_mouse_onto_focused_client()
-    local c = client.focus
-    gears.timer( {  timeout = 0.1,
-                autostart = true,
-                single_shot = true,
-                callback =  function()
-                    if mouse.object_under_pointer() ~= c then
-                        local geometry = c:geometry()
-                        local x = geometry.x + geometry.width/2
-                        local y = geometry.y + geometry.height/2
-                        mouse.coords({x = x, y = y}, true)
-                    end
-                end } )
+function Move_mouse_onto_focused_client()
+    local c = _G.client.focus
+    gears.timer({
+        timeout = 0.1,
+        autostart = true,
+        single_shot = true,
+        callback = function()
+            if _G.mouse.object_under_pointer() ~= c then
+                local geometry = c:geometry()
+                local x = geometry.x + geometry.width / 2
+                local y = geometry.y + geometry.height / 2
+                _G.mouse.coords({
+                    x = x,
+                    y = y
+                }, true)
+            end
+        end
+    })
 end
 
-client.connect_signal("focus", move_mouse_onto_focused_client)
-client.connect_signal("swapped", move_mouse_onto_focused_client)
+if beautiful.cursor_warp then
+    _G.client.connect_signal("focus", Move_mouse_onto_focused_client)
+    _G.client.connect_signal("swapped", Move_mouse_onto_focused_client)
+end
 
 -- Enable sloppy focus, so that focus follows mouse.
 _G.client.connect_signal('mouse::enter', function(c)
-    c:emit_signal('request::activate', 'mouse_enter', {raise = true})
+    c:emit_signal('request::activate', 'mouse_enter', {
+        raise = true
+    })
 end)
 
 -- Make the focused window have a glowing border
@@ -67,3 +77,16 @@ _G.client.connect_signal('unfocus', function(c)
     c.border_color = beautiful.border_normal
 end)
 
+if beautiful.title_bar then
+    -- Enable smart borders (https://github.com/intrntbrn/smart_borders)
+    require('module.smart-borders') {
+        show_button_tooltips = true,
+        border_width = dpi(16),
+        rounded_corner = dpi(0),
+        positions = {"bottom"},
+        button_positions = {"bottom"},
+        button_size = dpi(40),
+        color_focus = beautiful.primary.hue_200,
+        color_normal = beautiful.primary.hue_100
+    }
+end

@@ -17,6 +17,7 @@ apt = 	firefox \
 		vim \
 		neovim \
 		awesome \
+		i3lock-fancy \
 		python3-pip \
 		python3-venv \
 		npm \
@@ -25,6 +26,8 @@ apt = 	firefox \
 		zsh \
 		stow \
 		arandr \
+		xdotool \
+		polkit-gnome-authentication-agent-1 \
 		gh
 
 # Packages to be installed as snaps

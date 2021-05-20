@@ -18,9 +18,9 @@ return {
         region_screenshot = '~/.config/awesome/configuration/utils/screenshot -r',
         delayed_screenshot = '~/.config/awesome/configuration/utils/screenshot --delayed -r',
         browser = 'env firefox',
-        editor = 'gvim',
+        editor = 'kitty',
         social = 'env discord',
-        files = 'nautilus',
+        files = 'thunar',
         power_manager = 'gnome-power-statistics'
     },
     -- List of commands to start once on start-up
@@ -32,7 +32,7 @@ return {
         'ibus-daemon --xim --daemonize',
         'scream-start',
         'numlockx on',
-        '/usr/lib/xfce-polkit/xfce-polkit & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
+        '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
         'blueman-tray'
     }
 }

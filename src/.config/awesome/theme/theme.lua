@@ -35,8 +35,8 @@ local awesome_overrides = function(theme)
 
     -- Tasklist
     theme.tasklist_font = theme.font
-    theme.tasklist_bg_normal = theme.primary.hue_200
-    theme.tasklist_bg_focus = theme.primary.hue_100
+    theme.tasklist_bg_normal = theme.primary.hue_100
+    theme.tasklist_bg_focus = theme.primary.hue_200
     theme.tasklist_bg_urgent = theme.primary.hue_200
 
     -- Icons
@@ -49,5 +49,7 @@ local awesome_overrides = function(theme)
     theme.border_normal = theme.primary.hue_100
     theme.gap_single_client = false
     theme.bg_normal = theme.primary.hue_100
+    theme.cursor_warp = true
+    theme.title_bar = false
 end
 return {theme = theme, awesome_overrides = awesome_overrides}

@@ -1,5 +1,5 @@
 .PHONY: all
-all: autosuggestions syntax-highlighting tab-completions
+all: autosuggestions syntax-highlighting tab-completions z-jump
 
 autosuggestions:
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/zsh-autosuggestions

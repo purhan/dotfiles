@@ -14,6 +14,6 @@ xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 # Turn off laptop screen when monitor connected
 hdmi_connected=$(xrandr | grep ' connected' | grep 'HDMI' | wc -l)
 if [ "$hdmi_connected" -eq 1 ]; then
-    eval "~/scripts/monitor_setups/monitor_only"
+    eval "~/scripts/monitor_setups/laptop_left_primary_monitor_right"
 fi
 

@@ -169,7 +169,7 @@ hi Normal ctermbg=230
 set updatetime=100
 set mouse=a
 set noswapfile
-set colorcolumn=80
+set colorcolumn=90
 
 "" Set smart line numbers
 set number relativenumber

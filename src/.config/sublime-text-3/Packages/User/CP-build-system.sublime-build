@@ -5,7 +5,7 @@
   "auto_close": false,
   "timeit": true,
 
-  "post_window_hooks": [["carry_file_to_pane", { "direction": "down" }]],
+  "post_window_hooks": [["carry_file_to_pane", { "direction": "right" }]],
 
   "focus": false,
   "cmd": [
